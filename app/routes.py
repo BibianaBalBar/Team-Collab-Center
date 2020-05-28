@@ -2,8 +2,8 @@ from flask import render_template, flash, redirect, url_for, request
 from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
-from app.models import User
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
+from app.models import User, Post
 from datetime import datetime
 
 @app.before_request
@@ -12,22 +12,22 @@ def before_request():
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    user = {'username': 'Bibi'}
-    posts = [
-        {
-            'author': {'username': 'Cat'},
-            'body': 'Need help with flask!'
-        },
-        {
-            'author': {'username': 'Bob'},
-            'body': 'How do I use Azure API?'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    form = PostForm()
+    posts = Post.query.filter_by(user_id=current_user.id)   
+    if form.validate_on_submit():
+        post = Post(title=form.post.data, 
+                    description=form.post.data, 
+                    author=current_user,
+                    team_id=current_user.team_id)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post is now live!')
+        return redirect(url_for('index'))
+    return render_template('index.html', title='Home', form=form, posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -57,7 +57,10 @@ def register():
         return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data, position=form.position.data)
+        user = User(username=form.username.data, 
+                    email=form.email.data, 
+                    position_id=form.position.data.id,
+                    team_id=form.team.data.id)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -69,10 +72,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
+    posts = user.team_posts()
     return render_template('user.html', user=user, posts=posts)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])

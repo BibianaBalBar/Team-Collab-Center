@@ -1,7 +1,14 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
-from app.models import User
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
+from app.models import User, Team, Position
+
+def position_choice():
+    return Position.query
+
+def team_choice():
+    return Team.query
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -11,8 +18,13 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    position = StringField('Position', validators=[DataRequired()])
+    position = QuerySelectField('Position:', 
+                                query_factory=position_choice, get_label='name',
+                                allow_blank=False)
     email = StringField('Email', validators=[DataRequired(), Email()])
+    team = QuerySelectField('Team:', 
+                                query_factory=team_choice, get_label='name',
+                                allow_blank=False)
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
@@ -43,3 +55,10 @@ class EditProfileForm(FlaskForm):
             user = User.query.filter_by(username=self.username.data).first()
             if user is not None:
                 raise ValidationError('Please use a different username.')
+
+class PostForm(FlaskForm):
+    title = TextAreaField('Title:', validators=[
+        DataRequired(), Length(min=1, max=50)])
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')
