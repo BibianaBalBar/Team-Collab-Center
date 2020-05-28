@@ -3,7 +3,7 @@ from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
-from app.models import User, Post
+from app.models import User, Post, Team, Position
 from datetime import datetime
 
 @app.before_request
@@ -17,9 +17,9 @@ def before_request():
 @login_required
 def index():
     form = PostForm()
-    posts = Post.query.filter_by(user_id=current_user.id)   
+    posts = current_user.team_posts()
     if form.validate_on_submit():
-        post = Post(title=form.post.data, 
+        post = Post(title=form.title.data, 
                     description=form.post.data, 
                     author=current_user,
                     team_id=current_user.team_id)
@@ -28,6 +28,7 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('index'))
     return render_template('index.html', title='Home', form=form, posts=posts)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -72,7 +73,7 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = user.team_posts()
+    posts = Post.query.filter_by(user_id=current_user.id)   
     return render_template('user.html', user=user, posts=posts)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
