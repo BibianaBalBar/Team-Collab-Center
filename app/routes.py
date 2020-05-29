@@ -98,7 +98,7 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter_by(user_id=current_user.id).order_by(
+    posts = Post.query.filter_by(user_id=user.id).order_by(
         Post.timestamp.desc()).paginate(
         page, app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('user', username=user.username, page=posts.next_num) \
