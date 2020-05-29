@@ -11,11 +11,12 @@
 </head>
 <body>
     <div>
-        <a href="{{ url_for('index') }}">Team Collab Center:</a>
+        <a href="{{ url_for('index') }}">Team Collab Center</a>
         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a href=#>Create new issue</a>
+        <a href="{{ url_for('create_issue') }}">Create new issue</a>
+        <a href="{{ url_for('explore') }}">Help other teams</a>
         <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
         <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}

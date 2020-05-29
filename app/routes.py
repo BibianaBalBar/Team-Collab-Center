@@ -16,8 +16,23 @@ def before_request():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = PostForm()
+    # form = PostForm()
     posts = current_user.team_posts()
+    # if form.validate_on_submit():
+    #     post = Post(title=form.title.data, 
+    #                 description=form.post.data, 
+    #                 author=current_user,
+    #                 team_id=current_user.team_id)
+    #     db.session.add(post)
+    #     db.session.commit()
+    #     flash('Your post is now live!')
+    #     return redirect(url_for('index'))
+    return render_template('index.html', title='Home', posts=posts)
+
+@app.route('/create_issue', methods=['GET', 'POST'])
+@login_required
+def create_issue():
+    form = PostForm()    
     if form.validate_on_submit():
         post = Post(title=form.title.data, 
                     description=form.post.data, 
@@ -27,8 +42,13 @@ def index():
         db.session.commit()
         flash('Your post is now live!')
         return redirect(url_for('index'))
-    return render_template('index.html', title='Home', form=form, posts=posts)
+    return render_template('create_issue.html', title='Create Issue', form=form)
 
+@app.route('/explore')
+@login_required
+def explore():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', title='Explore', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
