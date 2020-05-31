@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>{{ title }} - Team Collab Center</title>
-    {% else %}
+    
     <title>Team Collab Center</title>
-    {% endif %}    
+     
     {{ moment.include_jquery() }}  
     {{ moment.include_moment() }}   
 </head>
@@ -17,9 +15,10 @@
         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a href="{{ url_for('create_issue') }}">Create new issue</a>
-        <a href="{{ url_for('explore') }}">Help other teams</a>
-        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+        <a href="{{ url_for('create_issue') }}">New Issue</a>
+        <a href="{{ url_for('explore') }}">All Issues</a>
+        <a href="{{ url_for('user', username=current_user.username) }}">My profile</a>
+        <a href="#">Settings</a>
         <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
     </div>
