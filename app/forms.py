@@ -42,7 +42,9 @@ class RegistrationForm(FlaskForm):
 
 class EditProfileForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    position = StringField('Position', validators=[DataRequired()])
+    position = QuerySelectField('Position:', 
+                                query_factory=position_choice, get_label='name',
+                                allow_blank=False)
     about_me = TextAreaField('About me', validators=[Length(min=0, max=240)])
     submit = SubmitField('Submit')
 

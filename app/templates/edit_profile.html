@@ -12,8 +12,9 @@
             {% endfor %}
         </p>
         <p>
+            {{ form.csrf_token }}
             {{ form.position.label }}<br>
-            {{ form.position(size=32) }}<br>
+            {{ form.position }}<br>
             {% for error in form.position.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
