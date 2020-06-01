@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Collab Center</title>
      
-    {{ moment.include_jquery() }}  
-    {{ moment.include_moment() }}  
+    <!-- {{ moment.include_jquery() }}  
+    {{ moment.include_moment() }}   -->
 
 </head>
 <body>
@@ -34,6 +34,7 @@
             Forgot Your Password?
             <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
         </p>
+        
         <br>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p>{{ form.submit() }}</p>
