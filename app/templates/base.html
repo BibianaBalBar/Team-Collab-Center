@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
     <title>Team Collab Center</title>
      
     {{ moment.include_jquery() }}  
     {{ moment.include_moment() }}   
 </head>
 <body>
-    <div>
-        <a href="{{ url_for('index') }}">Team Collab Center</a>
-        {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-        {% else %}
-        <a href="{{ url_for('create_issue') }}">New Issue</a>
-        <a href="{{ url_for('explore') }}">All Issues</a>
-        <a href="{{ url_for('user', username=current_user.username) }}">My profile</a>
-        <a href="#">Settings</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
-    </div>
+    <header class="main-header">        
+        <h1 class="name"><a href="{{ url_for('index') }}">Team Collab Center</a></h1>
+        
+        <ul class="main-nav">
+            {% if current_user.is_anonymous %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% else %}
+            <li><a href="{{ url_for('create_issue') }}">New Issue</a></li>  
+            <li><a href="{{ url_for('explore') }}">All Issues</a></li>
+            <li><a href="{{ url_for('user', username=current_user.username) }}">My profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>       
+    </header><!--/.main-header-->  
     <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
