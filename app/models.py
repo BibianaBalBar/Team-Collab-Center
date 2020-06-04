@@ -19,6 +19,7 @@ class User(UserMixin, db.Model):
     about_me = db.Column(db.String(240))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     team_id = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    comments = db.relationship('Comment', backref='comment_author', lazy='dynamic')
         
     def __repr__(self):
         return '<User {}>'.format(self.username)  
@@ -55,6 +56,7 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     team_id = db.Column(db.Integer, db.ForeignKey('teams.id'))
+    comments = db.relationship('Comment', backref='comment_ticket', lazy='dynamic')
 
     def __repr__(self):
         return '<Post {}>'.format(self.description)  
@@ -105,6 +107,13 @@ class Position(db.Model):
             db.session.add(position)
         db.session.commit()
 
+class Comment(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
 
 
 @login.user_loader

@@ -2,8 +2,8 @@ from flask import render_template, flash, redirect, url_for, request
 from werkzeug.urls import url_parse
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
-from app.models import User, Post, Team, Position
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm, CommentForm
+from app.models import User, Post, Team, Position, Comment
 from datetime import datetime
 from app.email import send_password_reset_email
 
@@ -158,3 +158,20 @@ def edit_profile():
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title='Edit Profile',
                            form=form)
+
+
+@app.route('/post/<id>', methods=['GET', 'POST'])
+@login_required
+def post_view(id):
+    commentForm = CommentForm()
+    comments = Comment.query.filter_by(post_id=id).order_by(Comment.timestamp.desc()).all()
+    post = Post.query.filter_by(id=id).first_or_404()
+    if commentForm.submit2.data and commentForm.validate():
+        comment = Comment(body=commentForm.body.data, post_id=post.id, 
+                            author_id=current_user.id)
+        db.session.add(comment)
+        db.session.commit()
+        flash('Your comment has been added')
+        return redirect(url_for('post_view', id=post.id))
+    return render_template('post.html', post=post, title='post', 
+                            commentForm=commentForm, comments=comments)
