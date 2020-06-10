@@ -35,9 +35,13 @@ p {
 	text-align: center;
 	display: block;
 	padding: 10px 15px;
+	color: #141414|important;
 }
 
-.h1,
 .main-nav li a {
 	color: #141414;
+}
+
+body h1 a:visited {
+	color: #141414|important;
 }
