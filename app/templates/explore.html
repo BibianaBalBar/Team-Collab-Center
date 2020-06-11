@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 
 <div class="main-body">
-{% block content %}
-    <h2>Hello, {{ current_user.username }}!</h2>
-    <h3>All teams issues</h3>
+    
+    {% block content %}
+    
+        <h2 class="welcome">Hello, {{ current_user.username }}!</h2>
+        <h3 class="teams">All teams issues</h3>
     
     {% for post in posts %}
         {% include '_post.html' %}
     {% endfor %}
-    {% if prev_url %}
-    <a href="{{ prev_url }}">Newer posts</a>
-    {% endif %}
-    {% if next_url %}
-    <a href="{{ next_url }}">Older posts</a>
-    {% endif %}
+    <footer class="footer">
+        {% if prev_url %}
+        <a href="{{ prev_url }}">Newer posts</a>
+        {% endif %}
+        {% if next_url %}
+        <a href="{{ next_url }}">Older posts</a>
+        {% endif %}
+    </footer>
 {% endblock %}
 </div>

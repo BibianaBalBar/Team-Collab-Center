@@ -1,39 +1,24 @@
 @import 'flex';
 
 * {
-	margin: 0;
-	padding: 0;
+	// margin: 0;
+	// padding: 0;
 	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Poppins', sans-serif;
 	color: #123e59;
-	margin: 0 4rem;
-
-	h2 {
-		padding-top: 1rem;
-		font-size: 1.4rem;
-	}
-	h3 {
-		padding-top: 1rem;
-		font-size: 1.2rem;
-		font-weight: normal;
-	}
-}
-
-body h1 a {
-	color: #123e59;
-	text-decoration: none;
-	font-weight: 700;
+	margin: 0;
 }
 
 .main-header {
 	padding: .5rem;
-	background-image: url('../imgs/Ellipse1.png');
+	background-image: url('../../imgs/Ellipse1.png');
 	background-size: auto;
 	background-repeat: no-repeat;
 	position: relative;
+	margin: 0 4rem 0 4rem;
 
 	ul {
 		display: flex;
@@ -50,15 +35,14 @@ body h1 a {
 	}
 }
 
-.name {
-	font-size: bold;
-}
-
 .name a {
 	text-align: center;
 	display: block;
 	padding: 10px 15px;
 	color: #d7d7d9;
+	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
+	text-decoration: none;
+	font-weight: 700;
 }
 
 .main-nav a {
@@ -75,17 +59,23 @@ body h1 a {
 	font-weight: 500;
 }
 
-.main-body {
-	line-height: 1.6;
-	padding: 2rem;
-	margin-top: 2rem;
+.welcome {
+	margin: .2rem 4rem 0 4rem;
+	padding-top: 2rem;
+	font-size: 1.4rem;
+}
+.teams {
+	margin: 0 4rem 0 4rem;
+	padding-top: 1rem;
+	font-size: 1.2rem;
+	font-weight: normal;
 }
 
 .posts-wrapper {
 	background-position: center;
 	padding: 1rem;
 	background-color: #d7d7d9;
-	margin: 1rem 0rem 1rem 30%;
+	margin: 1rem 4rem 1rem 30%;
 	border-radius: 13px;
 	color: #123e59;
 	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
@@ -106,7 +96,7 @@ p {
 	padding: 2rem;
 	width: 380px;
 	display: flex;
-	margin: 2rem auto 0 auto;
+	margin: 2rem auto 4rem auto;
 	flex-direction: column;
 	align-content: center;
 	background-color: #d7d7d9;
@@ -120,7 +110,32 @@ p {
 }
 
 .post-wrapper {
-	background-position: center;
-	padding: 1rem;
-	margin: 1rem;
+	padding: 2rem;
+	width: 80%;
+	display: flex;
+	margin: 2rem auto 2rem auto;
+	flex-direction: column;
+	align-content: center;
+	background-color: white;
+	border-radius: 13px;
+	color: #123e59;
+}
+
+.footer {
+	min-height: 2vh;
+	background-color: #d7d7d9;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: baseline;
+	flex-direction: row;
+
+	a {
+		color: #123e59;
+		text-decoration: none;
+		cursor: pointer;
+		padding-top: 1rem;
+		justify-content: space-evenly;
+	}
 }

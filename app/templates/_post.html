@@ -2,16 +2,21 @@
     <table class="posts-issues-table>
         <tr valign="top">        
             <td>
-                <a href="{{ url_for('user', username=post.author.username) }}">
-                {{ post.author.username }} 
-                </a>
-                issue : <a href="{{ url_for('post_view', id=post.id) }}">{{ post.title }}</a>
+                
+                <h4>Ref: {{ post.id }}</h4>
+                issue: <b><a href="{{ url_for('post_view', id=post.id) }}">{{ post.title }}</a></b>
                 <br>
+                <b><span>Description: </span></b>
                 {% if post.description|length < 20 %}
                     {{ post.description }}
                 {% else %}
                     {{ post.description[0:50] }} (...)
                 {% endif %}
+                <br>
+
+                Created by: <a href="{{ url_for('user', username=post.author.username) }}">
+                    {{ post.author.username }} 
+                </a>
                 <br>
                 Help requested {{ moment(post.timestamp).fromNow() }}
             </td>
