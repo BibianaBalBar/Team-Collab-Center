@@ -6,7 +6,9 @@ body {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.6;
 	margin: 0 4rem;
-
+	background-image: url('../imgs/hannah-busing-Zyx1bK9mqmA-unsplash.jpg');
+	background-size: cover;
+	background-position: center;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -14,17 +16,15 @@ body {
 	align-items: center;
 	h1 {
 		text-align: center;
+		color: rgba(255, 255, 255, 0.9);
+		text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
 	}
 }
 
 .formsignin {
-	// border: solid 2px black;
+	background-color: white;
+	opacity: 0.8;
 	padding: 50px;
 	box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
+	font-weight: 500;
 }
-
-// .hr-style {
-// 	border: 0;
-// 	height: 1px;
-// 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-// }

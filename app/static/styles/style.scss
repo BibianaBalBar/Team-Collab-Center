@@ -9,21 +9,24 @@ body {
 	line-height: 1.6;
 	margin: 0 4rem;
 	color: #141414;
+	background-color: rgba(255, 102, 35, 0.9);
 }
-ul {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	li a {
-		padding: 0 2rem;
+
+.main-header {
+	// background-color: rgba(255, 102, 35, 0.9);
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li a {
+			padding: 0 2rem;
+		}
 	}
-}
-p {
-	font-size: .95em;
-	margin-bottom: 1.8em;
 }
 
 .name {
@@ -34,14 +37,21 @@ p {
 .main-nav a {
 	text-align: center;
 	display: block;
-	padding: 10px 15px;
-	color: #141414|important;
+	padding: 10px 10px;
+	color: white;
 }
 
 .main-nav li a {
-	color: #141414;
+	color: white;
+	text-decoration: none;
 }
 
-body h1 a:visited {
-	color: #141414|important;
+body h1 a {
+	color: white;
+	text-decoration: none;
+}
+
+p {
+	font-size: .95em;
+	margin-bottom: 1.8em;
 }
