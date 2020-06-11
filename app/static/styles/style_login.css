@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -7,7 +9,8 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   margin: 0 4rem;
-  background-image: url("../imgs/hannah-busing-Zyx1bK9mqmA-unsplash.jpg");
+  background-image: url("../imgs/photo-of-people-near-wooden-table-3184418-2.jpg");
+  min-height: 100vh;
   background-size: cover;
   background-position: center;
   display: -webkit-box;
@@ -40,5 +43,11 @@ body h1 {
   -webkit-box-shadow: 10px 10px 5px 0px #d6d6d6;
           box-shadow: 10px 10px 5px 0px #d6d6d6;
   font-weight: 500;
+  border-radius: 13%;
+}
+
+.formsignin a {
+  color: #cc4b14;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style_login.css.map */

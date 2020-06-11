@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="create-issue">
     <h1>Ask for help!</h1>
     {% if form %}
     <form action="" method="post">
@@ -14,12 +15,14 @@
         </p>
         <p>
             {{ form.post.label }}<br>
-            {{ form.post(cols=32, rows=4) }}<br>
+            {{ form.post(cols=35, rows=10) }}<br>
             {% for error in form.post.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+
     {% endif %}
 {% endblock %}
+</div>

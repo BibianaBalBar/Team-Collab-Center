@@ -1,18 +1,20 @@
-<table>
-    <tr valign="top">        
-        <td>
-            <a href="{{ url_for('user', username=post.author.username) }}">
-            {{ post.author.username }} 
-            </a>
-            issue : <a href="{{ url_for('post_view', id=post.id) }}">{{ post.title }}</a>
-            <br>
-            {% if post.description|length < 20 %}
-                {{ post.description }}
-            {% else %}
-                {{ post.description[0:100] }} (...)
-            {% endif %}
-            <br>
-            Help requested {{ moment(post.timestamp).fromNow() }}
-        </td>
-    </tr>
-</table>
+<div class="posts-wrapper">
+    <table class="posts-issues-table>
+        <tr valign="top">        
+            <td>
+                <a href="{{ url_for('user', username=post.author.username) }}">
+                {{ post.author.username }} 
+                </a>
+                issue : <a href="{{ url_for('post_view', id=post.id) }}">{{ post.title }}</a>
+                <br>
+                {% if post.description|length < 20 %}
+                    {{ post.description }}
+                {% else %}
+                    {{ post.description[0:50] }} (...)
+                {% endif %}
+                <br>
+                Help requested {{ moment(post.timestamp).fromNow() }}
+            </td>
+        </tr>
+    </table>
+</div>

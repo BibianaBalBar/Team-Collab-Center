@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
-    <link rel="icon" href="{{ url_for('static',filename='imgs/text_box_check_outline_icon_139149.ico') }}">
+    <link rel="icon" href="{{ url_for('static',filename='imgs/puzzle_16773.ico') }}">
     <title>Team Collab Center</title>
      
     {{ moment.include_jquery() }}  
@@ -28,16 +28,17 @@
         </ul>       
     </header><!--/.main-header-->  
     <hr>
+    <section >
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul>
+        <ul">
             {% for message in messages %}
-            <li>{{ message }}</li>
+            <li >{{ message }}</li>
             {% endfor %}
         </ul>
         {% endif %}
         {% endwith %}
     {% block content %}{% endblock %}
-    
+    </section>
 </body>
 </html>

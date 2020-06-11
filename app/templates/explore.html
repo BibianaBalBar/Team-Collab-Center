@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
+<div class="main-body">
 {% block content %}
-    <h1>Hello, {{ current_user.username }}!</h1>
-    <h2>All teams issues</h2>
+    <h2>Hello, {{ current_user.username }}!</h2>
+    <h3>All teams issues</h3>
     
     {% for post in posts %}
         {% include '_post.html' %}
@@ -14,3 +15,4 @@
     <a href="{{ next_url }}">Older posts</a>
     {% endif %}
 {% endblock %}
+</div>

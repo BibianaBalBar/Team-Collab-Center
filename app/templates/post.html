@@ -2,19 +2,20 @@
 
 {% block content %}
 <div class="post-wrapper">
-    <h3>Ref: {{ post.id }}</h3>
-    <h2>{{ post.title }}</h2>
-    <p >
-        
-        <br>Created: {{ moment(post.timestamp).fromNow() }} 
-        <br>Posted by: {{ post.author.username }} 
-        <br>Team: {{ post.team_posts.name }} <br></p>
-        
-        
     
-    <h4>Description:</h4>
-    <p class="post-description">{{ post.description }}</p>
-    
+        <h3>Ref: {{ post.id }}</h3>
+        <h2>{{ post.title }}</h2>
+        <p >
+            
+            <br>Created: {{ moment(post.timestamp).fromNow() }} 
+            <br>Posted by: {{ post.author.username }} 
+            <br>Team: {{ post.team_posts.name }} <br></p>
+            
+            
+   
+        <h4>Description:</h4>
+        <p class="post-description">{{ post.description }}</p>
+ 
     <div class="post-comments">
         <h2>Comments: </h2>
         {% for comment in comments %}
@@ -31,15 +32,15 @@
 
 
         <form action="" method="post">
-            {{ commentForm.hidden_tag() }}
+            {{ form.hidden_tag() }}
             <p>
-                {{ commentForm.body.label }}<br>
-                {{ commentForm.body(cols=200, rows=10) }}<br>
-                {% for error in commentForm.body.errors %}
+                {{ form.body.label }}<br>
+                {{ form.body(cols=50, rows=10) }}<br>
+                {% for error in form.body.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             </p>
-            <p>{{ commentForm.submit2() }}</p>
+            <p>{{ form.submit2() }}</p>
         </form>
     </div>
 </div>

@@ -163,15 +163,15 @@ def edit_profile():
 @app.route('/post/<id>', methods=['GET', 'POST'])
 @login_required
 def post_view(id):
-    commentForm = CommentForm()
+    form = CommentForm()
     comments = Comment.query.filter_by(post_id=id).order_by(Comment.timestamp.desc()).all()
     post = Post.query.filter_by(id=id).first_or_404()
-    if commentForm.submit2.data and commentForm.validate():
-        comment = Comment(body=commentForm.body.data, post_id=post.id, 
+    if form.submit2.data and form.validate():
+        comment = Comment(body=form.body.data, post_id=post.id, 
                             author_id=current_user.id)
         db.session.add(comment)
         db.session.commit()
         flash('Your comment has been added')
         return redirect(url_for('post_view', id=post.id))
     return render_template('post.html', post=post, title='post', 
-                            commentForm=commentForm, comments=comments)
+                            form=form, comments=comments)

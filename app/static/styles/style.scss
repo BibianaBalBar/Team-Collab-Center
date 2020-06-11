@@ -1,19 +1,39 @@
 @import 'flex';
 
 * {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Poppins', sans-serif;
-	line-height: 1.6;
+	color: #123e59;
 	margin: 0 4rem;
-	color: #141414;
-	background-color: rgba(255, 102, 35, 0.9);
+
+	h2 {
+		padding-top: 1rem;
+		font-size: 1.4rem;
+	}
+	h3 {
+		padding-top: 1rem;
+		font-size: 1.2rem;
+		font-weight: normal;
+	}
+}
+
+body h1 a {
+	color: #123e59;
+	text-decoration: none;
+	font-weight: 700;
 }
 
 .main-header {
-	// background-color: rgba(255, 102, 35, 0.9);
+	padding: .5rem;
+	background-image: url('../imgs/Ellipse1.png');
+	background-size: auto;
+	background-repeat: no-repeat;
+	position: relative;
 
 	ul {
 		display: flex;
@@ -22,9 +42,10 @@ body {
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		align-items: initial;
 
 		li a {
-			padding: 0 2rem;
+			padding: 0 .75rem;
 		}
 	}
 }
@@ -33,25 +54,73 @@ body {
 	font-size: bold;
 }
 
-.name a,
+.name a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+	color: #d7d7d9;
+}
+
 .main-nav a {
 	text-align: center;
 	display: block;
-	padding: 10px 10px;
-	color: white;
+	padding: 10px 15px;
+	color: #123e59;
+	font-weight: 500;
 }
 
 .main-nav li a {
-	color: white;
+	color: #123e59;
 	text-decoration: none;
+	font-weight: 500;
 }
 
-body h1 a {
-	color: white;
-	text-decoration: none;
+.main-body {
+	line-height: 1.6;
+	padding: 2rem;
+	margin-top: 2rem;
+}
+
+.posts-wrapper {
+	background-position: center;
+	padding: 1rem;
+	background-color: #d7d7d9;
+	margin: 1rem 0rem 1rem 30%;
+	border-radius: 13px;
+	color: #123e59;
+	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
+
+	a {
+		color: #123e59;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }
 
 p {
 	font-size: .95em;
 	margin-bottom: 1.8em;
+}
+
+.create-issue {
+	padding: 2rem;
+	width: 380px;
+	display: flex;
+	margin: 2rem auto 0 auto;
+	flex-direction: column;
+	align-content: center;
+	background-color: #d7d7d9;
+	border-radius: 13px;
+	color: #123e59;
+	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
+
+	h1 {
+		padding-bottom: 2rem;
+	}
+}
+
+.post-wrapper {
+	background-position: center;
+	padding: 1rem;
+	margin: 1rem;
 }
