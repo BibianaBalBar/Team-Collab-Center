@@ -1,0 +1,29 @@
+
+.wrapp-create-issue {
+    background-image: url('../../imgs/undraw_connected_world_wuay.svg');
+	background-repeat: no-repeat;
+	margin: 2rem 10rem;
+	background-size: cover;
+    background-position: center;
+    padding: 1rem;
+}
+
+.create-issue {
+	padding: 2rem;
+	width: 480px;
+	height: auto;
+	display: flex;
+	margin: 5% auto 7% auto;
+	flex-direction: column;
+    align-content: center;
+    align-items: center;
+	background-color: #6c63ff;
+	border-radius: 13px;
+	color: white;
+    box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
+    opacity: 0.96;
+
+	h1 {
+		padding-bottom: 2rem;
+	}
+}

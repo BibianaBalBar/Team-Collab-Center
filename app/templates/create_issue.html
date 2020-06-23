@@ -2,6 +2,7 @@
 
 <div class="main-body">
 {% block content %}
+<div class="wrapp-create-issue">
 <div class="create-issue">
     <h1>Ask for help!</h1>
     {% if form %}
@@ -24,7 +25,8 @@
         <p>{{ form.submit() }}</p>
     </form>
 </div>
+</div>
     {% endif %}
-    <footer class="footer fotter-create-issue"></footer>
+    
 {% endblock %}
 </div>
