@@ -64,7 +64,6 @@ body {
 }
 
 
-
 .welcome {
 	margin: .2rem 4rem 0 4rem;
 	padding-top: 2rem;
@@ -150,6 +149,20 @@ p {
 	color: #6c63ff;
 	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
 	font-size: 3rem;
+}
+
+.edit-profile { 
+	padding: 5rem;
+	width: 40rem;
+	height: auto;
+	display: flex;
+	margin: 5% auto 7% auto;
+	flex-direction: column;
+	align-content: center;
+	background-color: #6c63ff;
+	border-radius: 13px;
+	color: white;
+	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
 }
 
 .footer {

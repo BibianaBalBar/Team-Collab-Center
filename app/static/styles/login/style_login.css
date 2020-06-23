@@ -31,13 +31,13 @@ body {
 
 .formsignin {
   background-color: #6c63ff;
-  opacity: 0.98;
-  padding: 2rem 5rem 5rem 5rem;
+  opacity: 0.95;
+  padding: 1rem 5rem 5rem 5rem;
   -webkit-box-shadow: 10px 10px 5px 0px #d6d6d6;
           box-shadow: 10px 10px 5px 0px #d6d6d6;
   font-weight: 500;
   border-radius: 13%;
-  color: white;
+  color: #f2f2f2;
 }
 
 .formsignin h1 {
@@ -45,11 +45,12 @@ body {
   color: white;
   text-shadow: 2.5px 2.5px 2.5px rgba(240, 240, 240, 0.6);
   font-size: 4rem;
-  padding-bottom: 4rem;
+  padding: 2rem;
+  margin: 0;
 }
 
 .formsignin a {
-  color: #f2f2f2;
+  color: white;
   text-decoration: underline;
 }
 

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
+
 {% block content %}
+<div class="edit-profile">
     <h1>Edit Profile</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
@@ -28,4 +30,7 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+    
+</div>
+<footer class="footer fotter-create-issue"></footer>
 {% endblock %}
