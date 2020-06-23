@@ -26,10 +26,11 @@
             <li><a href="#">Settings</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% endif %}
-        </ul>       
+        </ul>  
+           
     </header><!--/.main-header-->  
     <div class="main-body">
-    <hr>
+        <hr class="hr-nav">
     
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -43,7 +44,7 @@
     
     {% block content %}{% endblock %}
    
-   <footer class="footer"></footer>
+   <footer class="footer">Developed By Bibiana Barbosa &copy;</footer>
 </div> 
 </body>
 </html>

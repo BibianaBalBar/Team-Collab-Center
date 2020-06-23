@@ -1,0 +1,17 @@
+.post-wrapper {
+	padding: 2rem;
+	width: 80%;
+	display: flex;
+	margin: 2rem auto 2rem auto;
+	flex-direction: column;
+	align-content: center;
+	background-color: white;
+	border-radius: 13px;
+	color: #3f3d56;
+}
+
+.post-name {
+	color: #6c63ff;
+	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
+	font-size: 3rem;
+}

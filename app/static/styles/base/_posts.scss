@@ -1,0 +1,28 @@
+.posts-wrapper {
+	background-position: center;
+	padding: 0.5rem 1rem 1rem 1rem;
+	background-color: #6c63ff;
+	margin: 1rem 4rem 1rem 30%;
+	border-radius: 13px;
+	color: #f2f2f2;
+	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
+	opacity: .99;
+
+	a {
+		color: white;
+		text-decoration: underline;
+		cursor: pointer;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
+	.issue-name {
+		font-size: 1.5rem;
+	}
+
+	.creator-name {
+		font-size: 1.2rem;
+	}
+}

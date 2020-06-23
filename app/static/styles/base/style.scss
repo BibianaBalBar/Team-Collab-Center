@@ -1,10 +1,15 @@
-@import 'flex';
+@import 'medias';
+@import 'navbar';
+@import 'explore-index';
+@import 'posts';
+@import 'post-page';
 @import 'createIssue';
+@import 'user';
+@import 'edit-profile';
 @import 'footer';
 
 * {
-	// margin: 0;
-	// padding: 0;
+	
 	box-sizing: border-box;
 }
 
@@ -15,139 +20,7 @@ body {
 	
 }
 
-.main-header {
-	padding: .5rem;
-	background-image: url('../../imgs/undraw_connected_world_wuay.svg');
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: center;
-	position: relative;
-	margin: 0 4rem 0 4rem;
-
-	ul {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		align-items: initial;
-
-		li a {
-			padding: 0 .75rem;
-		}
-	}
-}
-
-.name a {
-	text-align: center;
-	display: block;
-	padding: 10px 15px;
-	color: #6c63ff;
-	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.main-nav a {
-	text-align: center;
-	display: block;
-	padding: 10px 15px;
-	color: #6c63ff;
-	font-weight: bold;
-	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
-}
-
-.main-nav li a {
-	color: #6c63ff;
-	text-decoration: none;
-	font-weight: bold;
-	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
-}
-
-
-.welcome {
-	margin: .2rem 4rem 0 4rem;
-	padding-top: 2rem;
-	font-size: 1.4rem;
-}
-.teams {
-	margin: 0 4rem 0 4rem;
-	padding-top: 1rem;
-	font-size: 1.2rem;
-	font-weight: normal;
-}
-
-.posts-wrapper {
-	background-position: center;
-	padding: 0.5rem 1rem 1rem 1rem;
-	background-color: #6c63ff;
-	margin: 1rem 4rem 1rem 30%;
-	border-radius: 13px;
-	color: #f2f2f2;
-	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
-	opacity: .99;
-
-	a {
-		color: white;
-		text-decoration: underline;
-		cursor: pointer;
-
-		&:hover {
-			font-weight: bold;
-		}
-	}
-
-	.issue-name {
-		font-size: 1.5rem;
-	}
-
-	.creator-name {
-		font-size: 1.2rem;
-	}
-}
-
 p {
 	font-size: .95em;
 	margin-bottom: 1.8em;
 }
-
-.user-table {
-	
-	padding: 0 10rem;
-	
-}
-
-
-.post-wrapper {
-	padding: 2rem;
-	width: 80%;
-	display: flex;
-	margin: 2rem auto 2rem auto;
-	flex-direction: column;
-	align-content: center;
-	background-color: white;
-	border-radius: 13px;
-	color: #3f3d56;
-}
-
-.post-name {
-	color: #6c63ff;
-	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
-	font-size: 3rem;
-}
-
-.edit-profile { 
-	padding: 5rem;
-	width: 40rem;
-	height: auto;
-	display: flex;
-	margin: 5% auto 7% auto;
-	flex-direction: column;
-	align-content: center;
-	background-color: #6c63ff;
-	border-radius: 13px;
-	color: white;
-	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
-}
-

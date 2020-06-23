@@ -1,21 +1,24 @@
 .footer {
-	min-height: 4vh;
+	min-height: 5vh;
 	background-color: #3f3d56;
 	width: 100%;
 	margin: 0;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: baseline;
+    display: flex;	
+    justify-content: center;
+    align-items:center;    
 	flex-direction: row;
 	color: white;
+	bottom: 0;
+	left: 0;
+    
 	
 
-	a {
-		color: white;
-		text-decoration: none;
-		cursor: pointer;
-		padding-top: 1rem;
-		justify-content: space-evenly;
-	}
+	// a {
+	// 	color: white;
+	// 	text-decoration: none;
+	// 	cursor: pointer;
+	// 	padding-top: 1rem;
+	// 	justify-content: space-evenly;
+	// }
 }
 
