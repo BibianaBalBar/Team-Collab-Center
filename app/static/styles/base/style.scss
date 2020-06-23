@@ -8,15 +8,17 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
-	color: #123e59;
+	color: #3f3d56;
 	margin: 0;
+	
 }
 
 .main-header {
 	padding: .5rem;
-	background-image: url('../../imgs/Ellipse1.png');
-	background-size: auto;
+	background-image: url('../../imgs/undraw_connected_world_wuay.svg');
 	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
 	position: relative;
 	margin: 0 4rem 0 4rem;
 
@@ -39,25 +41,29 @@ body {
 	text-align: center;
 	display: block;
 	padding: 10px 15px;
-	color: #d7d7d9;
+	color: #6c63ff;
 	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
 	text-decoration: none;
-	font-weight: 700;
+	font-weight: bold;
 }
 
 .main-nav a {
 	text-align: center;
 	display: block;
 	padding: 10px 15px;
-	color: #123e59;
-	font-weight: 500;
+	color: #6c63ff;
+	font-weight: bold;
+	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
 }
 
 .main-nav li a {
-	color: #123e59;
+	color: #6c63ff;
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: bold;
+	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
 }
+
+
 
 .welcome {
 	margin: .2rem 4rem 0 4rem;
@@ -73,17 +79,30 @@ body {
 
 .posts-wrapper {
 	background-position: center;
-	padding: 1rem;
-	background-color: #d7d7d9;
+	padding: 0.5rem 1rem 1rem 1rem;
+	background-color: #6c63ff;
 	margin: 1rem 4rem 1rem 30%;
 	border-radius: 13px;
-	color: #123e59;
+	color: #f2f2f2;
 	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
+	opacity: .99;
 
 	a {
-		color: #123e59;
-		text-decoration: none;
+		color: white;
+		text-decoration: underline;
 		cursor: pointer;
+
+		&:hover {
+			font-weight: bold;
+		}
+	}
+
+	.issue-name {
+		font-size: 1.5rem;
+	}
+
+	.creator-name {
+		font-size: 1.2rem;
 	}
 }
 
@@ -92,16 +111,22 @@ p {
 	margin-bottom: 1.8em;
 }
 
+.user-table {
+	
+	padding: 0 10rem;
+	
+}
 .create-issue {
 	padding: 2rem;
 	width: 380px;
+	height: auto;
 	display: flex;
-	margin: 2rem auto 4rem auto;
+	margin: 5% auto 7% auto;
 	flex-direction: column;
 	align-content: center;
-	background-color: #d7d7d9;
+	background-color: #6c63ff;
 	border-radius: 13px;
-	color: #123e59;
+	color: white;
 	box-shadow: 10px 10px 5px 0px rgb(230, 230, 230);
 
 	h1 {
@@ -118,24 +143,38 @@ p {
 	align-content: center;
 	background-color: white;
 	border-radius: 13px;
-	color: #123e59;
+	color: #3f3d56;
+}
+
+.post-name {
+	color: #6c63ff;
+	text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
+	font-size: 3rem;
 }
 
 .footer {
 	min-height: 2vh;
-	background-color: #d7d7d9;
+	background-color: #3f3d56;
 	width: 100%;
 	margin: 0;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: baseline;
 	flex-direction: row;
+	color: white;
+	
 
 	a {
-		color: #123e59;
+		color: white;
 		text-decoration: none;
 		cursor: pointer;
 		padding-top: 1rem;
 		justify-content: space-evenly;
 	}
+}
+
+.footer-create-issue {
+	position: sticky;
+	bottom: 0;
+	left: 0;
 }

@@ -38,15 +38,16 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #123e59;
+  color: #3f3d56;
   margin: 0;
 }
 
 .main-header {
   padding: .5rem;
-  background-image: url("../../imgs/Ellipse1.png");
-  background-size: auto;
+  background-image: url("../../imgs/undraw_connected_world_wuay.svg");
   background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
   position: relative;
   margin: 0 4rem 0 4rem;
 }
@@ -77,24 +78,26 @@ body {
   text-align: center;
   display: block;
   padding: 10px 15px;
-  color: #d7d7d9;
+  color: #6c63ff;
   text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, 0.6);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .main-nav a {
   text-align: center;
   display: block;
   padding: 10px 15px;
-  color: #123e59;
-  font-weight: 500;
+  color: #6c63ff;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, 0.6);
 }
 
 .main-nav li a {
-  color: #123e59;
+  color: #6c63ff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, 0.6);
 }
 
 .welcome {
@@ -112,19 +115,32 @@ body {
 
 .posts-wrapper {
   background-position: center;
-  padding: 1rem;
-  background-color: #d7d7d9;
+  padding: 0.5rem 1rem 1rem 1rem;
+  background-color: #6c63ff;
   margin: 1rem 4rem 1rem 30%;
   border-radius: 13px;
-  color: #123e59;
+  color: #f2f2f2;
   -webkit-box-shadow: 10px 10px 5px 0px #e6e6e6;
           box-shadow: 10px 10px 5px 0px #e6e6e6;
+  opacity: .99;
 }
 
 .posts-wrapper a {
-  color: #123e59;
-  text-decoration: none;
+  color: white;
+  text-decoration: underline;
   cursor: pointer;
+}
+
+.posts-wrapper a:hover {
+  font-weight: bold;
+}
+
+.posts-wrapper .issue-name {
+  font-size: 1.5rem;
+}
+
+.posts-wrapper .creator-name {
+  font-size: 1.2rem;
 }
 
 p {
@@ -132,22 +148,27 @@ p {
   margin-bottom: 1.8em;
 }
 
+.user-table {
+  padding: 0 10rem;
+}
+
 .create-issue {
   padding: 2rem;
   width: 380px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 2rem auto 4rem auto;
+  margin: 5% auto 7% auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #d7d7d9;
+  background-color: #6c63ff;
   border-radius: 13px;
-  color: #123e59;
+  color: white;
   -webkit-box-shadow: 10px 10px 5px 0px #e6e6e6;
           box-shadow: 10px 10px 5px 0px #e6e6e6;
 }
@@ -171,12 +192,18 @@ p {
       align-content: center;
   background-color: white;
   border-radius: 13px;
-  color: #123e59;
+  color: #3f3d56;
+}
+
+.post-name {
+  color: #6c63ff;
+  text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, 0.6);
+  font-size: 3rem;
 }
 
 .footer {
   min-height: 2vh;
-  background-color: #d7d7d9;
+  background-color: #3f3d56;
   width: 100%;
   margin: 0;
   display: -webkit-box;
@@ -192,15 +219,23 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  color: white;
 }
 
 .footer a {
-  color: #123e59;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   padding-top: 1rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.footer-create-issue {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
 }
 /*# sourceMappingURL=style.css.map */

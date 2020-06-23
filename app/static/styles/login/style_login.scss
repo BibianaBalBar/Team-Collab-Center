@@ -1,6 +1,6 @@
 * {
-	margin: 0;
-	padding: 0;
+	// margin: 0;
+	// padding: 0;
 	box-sizing: border-box;
 }
 
@@ -8,7 +8,8 @@ body {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.6;
 	margin: 0 4rem;
-	background-image: url('../../imgs/photo-of-people-near-wooden-table-3184418-2.jpg');
+	background-image: url('../../imgs/undraw_connected_world_wuay.svg');
+	background-repeat: no-repeat;
 	min-height: 100vh;
 	background-size: cover;
 	background-position: center;
@@ -17,23 +18,32 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	h1 {
-		text-align: center;
-		color: rgba(255, 255, 255, 0.9);
-		text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
-	}
+	
 }
 
 .formsignin {
-	background-color: white;
-	opacity: 0.8;
-	padding: 50px;
+	background-color: #6c63ff;
+	opacity: 0.98;
+	padding: 2rem 5rem 5rem 5rem;
 	box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
 	font-weight: 500;
 	border-radius: 13%;
+	color: white;
+
+	h1 {
+		text-align: center;
+		color: white;
+		text-shadow: 2.5px 2.5px 2.5px rgba(240, 240, 240, 0.6);
+		font-size: 4rem;
+		padding-bottom: 4rem;
+	}
 
 	a {
-		color: #cc4b14;
+		color: #f2f2f2;
 		text-decoration: underline;
+
+		&:hover {
+			font-weight: bold;
+		}
 	}
 }
