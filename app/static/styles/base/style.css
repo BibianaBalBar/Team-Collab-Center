@@ -162,17 +162,16 @@
 }
 
 .wrapp-create-issue {
-  background-image: url("../../imgs/undraw_connected_world_wuay.svg");
   background-repeat: no-repeat;
-  margin: 2rem 10rem;
-  background-size: cover;
+  margin: 5rem 10rem;
+  background-size: 68vw 110vh;
   background-position: center;
   padding: 1rem;
 }
 
 .create-issue {
   padding: 2rem;
-  width: 480px;
+  width: 30vw;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,9 +206,17 @@
   margin: 0 4rem 0 4rem;
 }
 
+.wrapp-edit-profile {
+  background-repeat: no-repeat;
+  margin: 2rem 10rem;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+}
+
 .edit-profile {
-  padding: 5rem;
-  width: 40rem;
+  padding: 2rem;
+  width: 35vw;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
