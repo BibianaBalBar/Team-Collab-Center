@@ -15,7 +15,15 @@
    
     <header class="main-header">        
         <h1 class="name"><a href="{{ url_for('index') }}">Team Collab Center</a></h1>
-        
+        {% if g.search_form %}
+        <form class="navbar-form navbar-left" method="get"
+                action="{{ url_for('search') }}">
+            <div class="form-group">
+                {{ g.search_form.q(size=20, class='form-control',
+                    placeholder=g.search_form.q.label.text) }}
+            </div>
+        </form>
+        {% endif %}   
         <ul class="main-nav">
             {% if current_user.is_anonymous %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -27,7 +35,7 @@
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% endif %}
         </ul>  
-           
+        
     </header><!--/.main-header-->  
     <div class="main-body">
         <hr class="hr-nav">
