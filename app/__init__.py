@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_moment import Moment
 from flask_mail import Mail
+from elasticsearch import Elasticsearch
 from config import Config
 
 
@@ -18,6 +19,8 @@ mail = Mail(app)
 login = LoginManager(app)
 login.login_view = 'login'
 moment = Moment(app)
+app.elasticsearch = Elasticsearch([app.config['ELASTICSEARCH_URL']]) \
+        if app.config['ELASTICSEARCH_URL'] else None
 
 
 # Error logs 

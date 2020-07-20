@@ -49,6 +49,7 @@ class User(UserMixin, db.Model):
         return User.query.get(id)
 
 class Post(db.Model):  
+    __searchable__ = ['body']
     __tablename__='posts'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64))
