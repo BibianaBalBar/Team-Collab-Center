@@ -1,3 +1,4 @@
+
 * {
 	// margin: 0;
 	// padding: 0;
@@ -8,11 +9,11 @@ body {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.6;
 	margin: 0 4rem;
-	background-image: url('../../imgs/undraw_connected_world_wuay.svg');
-	background-repeat: no-repeat;
+	background: #152026;
+	// background-repeat: no-repeat;
 	min-height: 100vh;
-	background-size: cover;
-	background-position: center;
+	// background-size: cover;
+	// background-position: center;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -22,18 +23,19 @@ body {
 }
 
 .formsignin {
-	background-color: #6c63ff;
-	opacity: 0.95;
+	background-color: #314A59;
+	// opacity: 0.9;
 	padding: 1rem 5rem 5rem 5rem;
-	box-shadow: 10px 10px 5px 0px rgba(214, 214, 214, 1);
+	
 	font-weight: 500;
 	border-radius: 13%;
-	color: #f2f2f2;
+	color: #F6F6F6;
+	
 
 	h1 {
 		text-align: center;
-		color: white;
-		text-shadow: 2.5px 2.5px 2.5px rgba(240, 240, 240, 0.6);
+		color: #ADC5D9;
+		
 		font-size: 4rem;
 		padding: 2rem;
 		margin: 0;
@@ -42,9 +44,11 @@ body {
 	a {
 		color: white;
 		text-decoration: underline;
+		transition: font-size 0.5s ease-in-out;	
 
 		&:hover {
 			font-weight: bold;
+			color: #ADC5D9;
 		}
 	}
 }

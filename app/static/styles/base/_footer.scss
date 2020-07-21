@@ -1,13 +1,17 @@
+.footer-main {
+	position: absolute;
+}
 .footer {
 	min-height: 5vh;
-	background-color: #3f3d56;
+	background-color: #152026;
 	width: 100%;
 	margin: 0;
     display: flex;	
     justify-content: center;
     align-items:center;    
 	flex-direction: row;
-	color: white;
+	
+	position: relative;
 	bottom: 0;
 	left: 0;
     

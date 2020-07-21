@@ -1,17 +1,17 @@
 
-.wrapp-create-issue {         
+.wrapp-reset {         
 	margin: 1.2rem 10rem;
 	background-size: 68vw 110vh;
     background-position: center;
     padding: 1rem;
 }
 
-.create-issue {
+.reset {
 	padding: 2rem;
 	width: 30vw;
 	height: auto;
 	display: flex;
-	margin: 5% auto 7% auto;
+	margin: 5% auto 8% auto;
 	flex-direction: column;
     align-content: center;
     align-items: center;
@@ -22,10 +22,11 @@
     opacity: 0.96;
 
 	h1 {
-		padding-bottom: 2rem;
+		padding: 0.5rem 0 3.5rem 0;
 	}
 
 	p {
 		font-size: 1.3rem;
+		padding: 0.5rem 0 2rem 0;
 	}
 }

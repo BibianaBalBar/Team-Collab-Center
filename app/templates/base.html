@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/base/style.css') }}">
-    <link rel="icon" href="{{ url_for('static',filename='imgs/undraw_team_goals_hrii.png') }}">
+    <link rel="icon" href="{{ url_for('static',filename='imgs/users-team_icon-icons.com_57998.ico') }}">
     <title>Team Collab Center</title>
      
     {{ moment.include_jquery() }}  
@@ -23,7 +23,7 @@
                     placeholder=g.search_form.q.label.text) }}
             </div>
         </form>
-        {% endif %}   
+        {% endif %}
         <ul class="main-nav">
             {% if current_user.is_anonymous %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -31,14 +31,14 @@
             <li><a href="{{ url_for('create_issue') }}">New Issue</a></li>  
             <li><a href="{{ url_for('explore') }}">All Issues</a></li>
             <li><a href="{{ url_for('user', username=current_user.username) }}">My profile</a></li>
-            <li><a href="#">Settings</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% endif %}
-        </ul>  
-        
+        </ul>
+         
+          
     </header><!--/.main-header-->  
-    <div class="main-body">
-        <hr class="hr-nav">
+    
+       
     
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -51,8 +51,9 @@
         {% endwith %}
     
     {% block content %}{% endblock %}
-   
+   <div class="fotter-main">
    <footer class="footer">Developed By Bibiana Barbosa &copy;</footer>
+
 </div> 
 </body>
 </html>

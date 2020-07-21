@@ -1,6 +1,8 @@
 {% extends "base.html" %}
-
+<div class="main-body">
 {% block content %}
+<div class="wrapp-create-issue">
+    <div class="create-issue">
     <h1>Register</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
@@ -50,4 +52,7 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+</div>
+</div>
 {% endblock %}
+</div>

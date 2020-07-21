@@ -1,22 +1,22 @@
 .main-header {
 	padding: .5rem;
-	background-image: url('../../imgs/undraw_connected_world_wuay.svg');
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: center;
-	position: relative;
-    margin: 0 4rem 0 4rem;
+	background: #152026;
+	// background-repeat: no-repeat;
+	// background-size: auto;
+	// background-position: center;
+    position: relative;
     border: none;
+    // opacity: .9;
     
     .name a {
         text-align: center;
         display: block;
         padding: 10px 15px;
-        color: #6c63ff;
-        text-shadow: 2px 2px 2px rgba(214, 214, 214, .6);
+        color: #ADC5D9;        
         text-decoration: none;
         font-weight: bold;
         font-size: 2.6rem;
+        transition: font-size 0.5s ease-in-out;	
 
         &:hover {
             font-size: 2.8rem;            
@@ -37,13 +37,13 @@
             text-align: center;
             display: block;
             padding: 10px 15px;
-            color: #6c63ff;
+            color: #ADC5D9;
             font-weight: bold;
-            text-decoration: none;
-            text-shadow: 1.5px 1.5px 1.5px rgba(214, 214, 214, .6);
+            text-decoration: none;            
+            transition: font-size 0.5s ease-in-out;	
 
             &:hover {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
         }
     }

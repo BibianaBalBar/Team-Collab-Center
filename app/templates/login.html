@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/login/style_login.css') }}">
-    <link rel="icon" href="{{ url_for('static',filename='imgs/undraw_team_goals_hrii.png') }}">
+    <link rel="icon" href="{{ url_for('static',filename='imgs/imgs/users-team_icon-icons.com_57998.ico') }}">
     <title>Team Collab Center</title>
      
     <!-- {{ moment.include_jquery() }}  
@@ -20,7 +20,8 @@
     
    
     <div class="formsignin">
-        <h1>Sign In</h1>
+        <h1>Team Collab <br/>Center</h1>
+        <h2>Sign In</h2>
         <form  action="" method="post" novalidate>
             {{ form.hidden_tag() }}
             <p class="username">
@@ -49,8 +50,8 @@
             <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
         </form>
     </div>
-    <hr>
-    <hr>
+   
+    
     {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul">
