@@ -1,13 +1,12 @@
 .post-wrapper {
-	padding: 0 5rem 0 5rem;
+	padding: 0 7rem;
 	width: 80%;
 	display: flex;
 	margin: 2rem auto 2rem auto;
 	flex-direction: column;
 	align-content: center;
 	background-color: #152026;
-	border-radius: 13px;
-	
+	border-radius: 13px;	
 
 	h3 {
 		color: #ADC5D9;
@@ -16,6 +15,23 @@
 
 .post-name {
 	color: #ADC5D9;
-	
+	text-align: center;
 	font-size: 3rem;
+}
+
+.section-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.meta-data {
+	text-align: right;
+}
+
+.post-description {
+	padding-left: 1.5rem;
+}
+.comment-content {
+	padding-left: 1.5rem;
 }

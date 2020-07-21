@@ -4,17 +4,25 @@
 <div class="post-wrapper">
     
        
-        <h2 class="post-name">{{ post.title }}</h2>
-        <p >
-            
-            <br>Created: {{ moment(post.timestamp).fromNow() }} 
-            <br>Posted by: {{ post.author.username }} 
-            <br>Team: {{ post.team_posts.name }} <br></p>
-            
-        <h3>Ref: {{ post.id }}</h3>    
-   
-        <h2>Description:</h2>
-        <p class="post-description">{{ post.description }}</p>
+        <h2 class="post-name">Issue: {{ post.title }}</h2>
+
+        <div class="section-top">
+            <div class="section-top-1">
+                <h3>Ref: {{ post.id }}</h3>    
+                <br>
+                <h2 class="description">Description:</h2>
+                <p class="post-description">{{ post.description }}</p>
+            </div>
+            <div class="section-top-2">
+                <p class="meta-data">                    
+                    <br>Created: {{ moment(post.timestamp).fromNow() }} 
+                    <br>
+                    <br>Posted by: {{ post.author.username }} 
+                    <br>
+                    <br>Team: {{ post.team_posts.name }} 
+                </p>
+            </div>    
+        </div>
  
     <div class="post-comments">
         <h2>Comments: </h2>
@@ -27,15 +35,16 @@
                         {{ moment(comment.timestamp).fromNow() }} 
                     </td>
                 </tr>
-            </table>    
+            </table> 
+            <hr>   
         {% endfor %}
 
-
+            
         <form action="" method="post">
             {{ form.hidden_tag() }}
             <p>
                 {{ form.body.label }}<br>
-                {{ form.body(cols=50, rows=10) }}<br>
+                {{ form.body(cols=70, rows=10) }}<br>
                 {% for error in form.body.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}

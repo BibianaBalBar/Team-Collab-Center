@@ -1,7 +1,4 @@
-
-* {
-	// margin: 0;
-	// padding: 0;
+* {	
 	box-sizing: border-box;
 }
 
@@ -9,33 +6,25 @@ body {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.6;
 	margin: 0 4rem;
-	background: #152026;
-	// background-repeat: no-repeat;
-	min-height: 100vh;
-	// background-size: cover;
-	// background-position: center;
+	background: #152026;	
+	min-height: 100vh;	
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	
+	align-items: center;	
 }
 
 .formsignin {
-	background-color: #314A59;
-	// opacity: 0.9;
-	padding: 1rem 5rem 5rem 5rem;
-	
+	background-color: #314A59;	
+	padding: 1rem 5rem 5rem 5rem;	
 	font-weight: 500;
 	border-radius: 13%;
-	color: #F6F6F6;
-	
+	color: #F6F6F6;	
 
 	h1 {
 		text-align: center;
-		color: #ADC5D9;
-		
+		color: #ADC5D9;		
 		font-size: 4rem;
 		padding: 2rem;
 		margin: 0;
