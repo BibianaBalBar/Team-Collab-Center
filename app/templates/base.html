@@ -39,17 +39,18 @@
     </header><!--/.main-header-->  
     
        
-    
+    <div class="message">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul">
+        
+        <ul >
             {% for message in messages %}
-            <li >{{ message }}</li>
+            <li>{{ message }}</li>
             {% endfor %}
         </ul>
         {% endif %}
         {% endwith %}
-    
+    </div>
     <div class="container">
     {% block content %}{% endblock %}
     </div>

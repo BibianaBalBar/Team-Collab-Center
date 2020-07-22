@@ -28,6 +28,17 @@
   }
 }
 
+@media (max-width: 1212px) {
+  .main-nav a {
+    font-size: 1rem;
+    -webkit-transition: font-size 0.5s ease-in-out;
+    transition: font-size 0.5s ease-in-out;
+  }
+  .main-nav a:hover {
+    font-size: 1.2rem;
+  }
+}
+
 .main-header {
   padding: .5rem;
   background: #152026;
@@ -70,7 +81,7 @@
 }
 
 .main-header .main-nav a {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: center;
   display: block;
   padding: 10px 15px;
@@ -82,7 +93,7 @@
 }
 
 .main-header .main-nav a:hover {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 .hr-nav {
@@ -347,6 +358,10 @@ p {
 }
 
 .container {
-  min-height: 79vh;
+  min-height: 80vh;
+}
+
+.message ul {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

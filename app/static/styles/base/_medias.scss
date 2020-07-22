@@ -16,3 +16,17 @@
 		justify-content: space-between;
 	}
 }
+
+@media (max-width: 1212px) {
+	.main-nav {
+		
+		a {
+			font-size: 1rem;
+			transition: font-size 0.5s ease-in-out;	
+
+			&:hover {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
