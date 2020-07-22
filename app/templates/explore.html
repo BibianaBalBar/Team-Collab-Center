@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-<div class="main-body">
+
     
-    {% block content %}
-    
+{% block content %}
+    <div class="main-body"></div>
         <h2 class="welcome">Hello, {{ current_user.username }}!</h2>
         <h3 class="teams">All teams issues</h3>
     
@@ -17,6 +17,5 @@
         {% if next_url %}
         <a href="{{ next_url }}">Older posts</a>
         {% endif %}
-   
+    </div>  
 {% endblock %}
-</div>

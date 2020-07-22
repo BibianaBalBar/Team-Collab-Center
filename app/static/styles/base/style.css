@@ -258,8 +258,9 @@
   color: #ADC5D9;
 }
 
-.footer-main {
-  position: absolute;
+footer {
+  position: relative;
+  bottom: 0%;
 }
 
 .footer {
@@ -280,9 +281,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: relative;
-  bottom: 0;
-  left: 0;
 }
 
 .wrapp-reset {
@@ -346,5 +344,9 @@ body a:hover {
 p {
   font-size: .95em;
   margin-bottom: 1.8em;
+}
+
+.container {
+  min-height: 79vh;
 }
 /*# sourceMappingURL=style.css.map */

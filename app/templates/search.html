@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
+
+{% block content %}
 <div class="main-body">
-{% block app_content %}
-    <h1>Search Results</h1>
+    <h2 class="welcome">{{ ('Search Results') }}</h2>
     
     {% for post in posts %}
         {% include '_post.html' %}
@@ -14,6 +15,5 @@
         {% if next_url %}
         <a href="{{ next_url }}">Older posts</a>
         {% endif %}
-
-{% endblock %}
 </div>
+{% endblock %}

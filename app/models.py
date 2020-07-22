@@ -90,7 +90,7 @@ class User(UserMixin, db.Model):
         return User.query.get(id)
 
 class Post(SearchableMixin, db.Model):  
-    __searchable__ = ['title', 'description', 'id', 'author']
+    __searchable__ = ['title', 'description', 'id']
     __tablename__='posts'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(64))

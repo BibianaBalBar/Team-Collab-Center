@@ -1,4 +1,4 @@
-2020-05-28 11:58:05,550 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-05-28 12:16:02,383 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,28 +14,14 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 30, in index
-    return render_template('index.html', title='Home', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-05-28 11:58:25,639 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 26, in index
+    posts = current_user.team_posts().all()
+  File "/home/bibi/bibistuff/team_collab/app/models.py", line 27, in team_posts
+    return Post.query.all().order_by(Post.timestamp.desc())
+AttributeError: 'list' object has no attribute 'order_by'
+2020-05-28 12:17:34,883 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 12:20:02,450 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 12:20:05,674 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -51,28 +37,31 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 30, in index
-    return render_template('index.html', title='Home', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-05-28 11:58:28,700 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 26, in index
+    posts = current_user.team_posts().all()
+  File "/home/bibi/bibistuff/team_collab/app/models.py", line 27, in team_posts
+    return Post.order_by(Post.timestamp.desc())
+AttributeError: type object 'Post' has no attribute 'order_by'
+2020-05-28 12:22:46,603 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 14:54:46,547 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 14:55:00,036 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 14:56:02,429 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:05:04,309 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:13:37,850 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:28:47,814 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:28:57,325 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:33:04,640 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:34:07,962 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 15:34:15,405 ERROR: Exception on /user/new [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: users
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -82,33 +71,57 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 30, in index
-    return render_template('index.html', title='Home', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-05-28 12:07:12,899 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
-2020-05-28 12:07:48,823 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
-2020-05-28 12:15:47,950 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1948, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2242, in preprocess_request
+    rv = func()
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 11, in before_request
+    if current_user.is_authenticated:
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/werkzeug/local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/werkzeug/local.py", line 306, in _get_current_object
+    return self.__local()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "/home/bibi/bibistuff/team_collab/app/models.py", line 94, in load_user
+    return User.query.get(int(id))
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1021, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 1138, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/loading.py", line 287, in load_on_pk_identity
+    return q.one()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3436, in one
+    ret = self.one_or_none()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3405, in one_or_none
+    ret = list(self)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3481, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3506, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1020, in execute
+    return meth(self, multiparams, params)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1139, in _execute_clauseelement
+    distilled_params,
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1324, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1518, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: users
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.email AS users_email, users.password_hash AS users_password_hash, users.position_id AS users_position_id, users.about_me AS users_about_me, users.last_seen AS users_last_seen, users.team_id AS users_team_id 
+FROM users 
+WHERE users.id = ?]
+[parameters: (1,)]
+(Background on this error at: http://sqlalche.me/e/e3q8)

@@ -1,4 +1,4 @@
-2020-05-28 23:31:12,811 ERROR: Exception on / [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-05-28 23:35:53,563 ERROR: Exception on / [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,28 +15,11 @@ Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
   File "/home/bibi/bibistuff/team_collab/app/routes.py", line 21, in index
-    return render_template('index.html', title='Home', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-05-28 23:31:31,536 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
-2020-05-28 23:31:33,215 ERROR: Exception on / [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+    return render_template('index.html', title='Team Collab Center', posts=posts.items)
+AttributeError: 'BaseQuery' object has no attribute 'items'
+2020-05-28 23:38:54,103 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 23:43:24,015 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 23:43:28,561 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -52,29 +35,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 21, in index
-    return render_template('index.html', title='Home', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 18, in template
-    <a href="{{ url_for('create_issue' }}">Create new issue</a>
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
-2020-05-28 23:33:55,073 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
-2020-05-28 23:33:56,437 ERROR: Exception on / [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 20, in index
+    posts = user.team_posts()
+AttributeError: 'function' object has no attribute 'team_posts'
+2020-05-28 23:43:32,495 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -90,25 +54,41 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 21, in index
-    return render_template('index.html', title='Team Collab Center', posts=posts)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/base.html", line 33, in top-level template code
-    {% block content %}{% endblock %}
-  File "/home/bibi/bibistuff/team_collab/app/templates/index.html", line 6, in block "content"
-    {{ form.hidden_tag() }}
-  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/jinja2/environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
-2020-05-28 23:35:51,919 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 20, in index
+    posts = user.team_posts()
+AttributeError: 'function' object has no attribute 'team_posts'
+2020-05-28 23:46:40,808 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 23:48:38,788 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-28 23:48:40,524 ERROR: Exception on /index [GET] [in /home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/bibi/bibistuff/team_collab/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/bibi/bibistuff/team_collab/app/routes.py", line 20, in index
+    posts = User.team_posts()#Post.query.filter_by(team_id=current_user.team_id).order_by(Post.timestamp.desc())
+TypeError: team_posts() missing 1 required positional argument: 'self'
+2020-05-28 23:49:01,170 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-05-29 20:45:32,264 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:45]
+2020-06-01 12:40:45,664 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 18:49:42,477 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:10:32,495 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:21:37,932 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:39:38,402 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:42:03,988 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:44:10,446 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:48:45,194 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:52:21,671 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:53:10,110 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-02 19:57:23,780 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
+2020-06-04 17:40:29,483 INFO: Team Collab startup [in /home/bibi/bibistuff/team_collab/app/__init__.py:50]
