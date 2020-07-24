@@ -50,7 +50,7 @@ Access url to see web app
         http://localhost:5000/
 
 ## Search Engine
-To enable the search option please refer the Elasticsearch installation tutorial here.
+To enable the search option please refer the Elasticsearch installation tutorial [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html).
 
 Run Elasticsearch:
 
